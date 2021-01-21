@@ -22,20 +22,20 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}}};
   </script>
 
-  <meta name="description" content="多态:子类重写父类的方法,父类指针指向子类 三个条件 1.继承:各种cell继承自BaseCell 2.重写:子类cell重写BaseCell的set方法 3.父类cell指向子类cell">
+  <meta name="description" content="多态:子类重写父类的方法,父类指针指向子类 三个条件 1.继承:各种cell继承自BaseCell. 2.重写:子类cell重写BaseCell的set方法. 3.父类cell指向子类cell. 继承 优点:代码重用. 缺点: 父类的改变影响所有子类. 重写了父类的方法,还想使用父类的功能,使用super,例如super.viewDidLoad. 方法的调用顺序:1)在自己类中找; 2)如果没有就">
 <meta property="og:type" content="article">
-<meta property="og:title" content="01-多态">
-<meta property="og:url" content="http://yoursite.com/2021/01/21/01-%E5%A4%9A%E6%80%81/index.html">
+<meta property="og:title" content="01-面向对象">
+<meta property="og:url" content="http://yoursite.com/2021/01/21/01-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/index.html">
 <meta property="og:site_name" content="彭立的技术博客">
-<meta property="og:description" content="多态:子类重写父类的方法,父类指针指向子类 三个条件 1.继承:各种cell继承自BaseCell 2.重写:子类cell重写BaseCell的set方法 3.父类cell指向子类cell">
+<meta property="og:description" content="多态:子类重写父类的方法,父类指针指向子类 三个条件 1.继承:各种cell继承自BaseCell. 2.重写:子类cell重写BaseCell的set方法. 3.父类cell指向子类cell. 继承 优点:代码重用. 缺点: 父类的改变影响所有子类. 重写了父类的方法,还想使用父类的功能,使用super,例如super.viewDidLoad. 方法的调用顺序:1)在自己类中找; 2)如果没有就">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-01-21T06:22:43.000Z">
-<meta property="article:modified_time" content="2021-01-21T07:13:54.160Z">
+<meta property="article:modified_time" content="2021-01-21T07:52:33.206Z">
 <meta property="article:author" content="彭立">
 <meta property="article:tag" content="彭立">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/2021/01/21/01-%E5%A4%9A%E6%80%81/">
+<link rel="canonical" href="http://yoursite.com/2021/01/21/01-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">
 
 
 <script class="page-configurations">
@@ -48,7 +48,7 @@
   };
 </script>
 
-  <title>01-多态 | 彭立的技术博客</title>
+  <title>01-面向对象 | 彭立的技术博客</title>
   
 
 
@@ -224,7 +224,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/21/01-%E5%A4%9A%E6%80%81/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/21/01-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/icon.png">
@@ -237,7 +237,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          01-多态
+          01-面向对象
         </h1>
 
         <div class="post-meta">
@@ -248,7 +248,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-01-21 14:22:43 / 修改时间：15:13:54" itemprop="dateCreated datePublished" datetime="2021-01-21T14:22:43+08:00">2021-01-21</time>
+              <time title="创建时间：2021-01-21 14:22:43 / 修改时间：15:52:33" itemprop="dateCreated datePublished" datetime="2021-01-21T14:22:43+08:00">2021-01-21</time>
             </span>
 
           
@@ -264,9 +264,18 @@
       
         <p>多态:子类重写父类的方法,父类指针指向子类</p>
 <p>三个条件</p>
-<p>1.继承:各种<code>cell</code>继承自<code>BaseCell</code></p>
-<p>2.重写:子类<code>cell</code>重写<code>BaseCell</code>的<code>set</code>方法</p>
-<p>3.父类<code>cell</code>指向子类<code>cell</code></p>
+<p>1.继承:各种<code>cell</code>继承自<code>BaseCell.</code></p>
+<p>2.重写:子类<code>cell</code>重写<code>BaseCell</code>的<code>set</code>方法.</p>
+<p>3.父类<code>cell</code>指向子类<code>cell.</code></p>
+<p>继承</p>
+<p>优点:代码重用.</p>
+<p>缺点: 父类的改变影响所有子类.</p>
+<p>重写了父类的方法,还想使用父类的功能,使用<code>super</code>,例如<code>super.viewDidLoad</code>.</p>
+<p>方法的调用顺序:1)在自己类中找; 2)如果没有就去父类中找; 3)如果父类中没有,就逐级寻找,直到基类.</p>
+<p>分类:扩展已有类的功能</p>
+<p>1.分类不能扩展原有类的成员变量.</p>
+<p>2.分类可以扩展系统自带类的功能,不建议使用,之前遇到过扩展<code>UIButton</code>的分类,<code>UIBUtton</code>隐藏了也响应事件.</p>
+<p>类扩展: <code>Extension</code></p>
 
     </div>
 
