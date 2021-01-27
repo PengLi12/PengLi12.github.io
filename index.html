@@ -244,7 +244,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-01-27 11:28:14 / 修改时间：14:58:46" itemprop="dateCreated datePublished" datetime="2021-01-27T11:28:14+08:00">2021-01-27</time>
+              <time title="创建时间：2021-01-27 11:28:14 / 修改时间：15:06:24" itemprop="dateCreated datePublished" datetime="2021-01-27T11:28:14+08:00">2021-01-27</time>
             </span>
 
           
@@ -262,49 +262,14 @@
 <p>1.<code>NSThread</code>轻量级的线程操作,需要我们自己创建线程,调度任务,销毁线程.</p>
 <p>后台线程:<code>performSelectorInBackground</code></p>
 <p>主线程:<code>performSelectorOnMainThread</code></p>
-<p>2.<code>GCD</code>苹果为多核并行运算提出的解决方案,不用关心什么时候开线程,关线程,你只要创建出你的任务,然后把任务添加进适当的队列中.</p>
-<p>同步异步决定了是否会开启分线程</p>
-<p>串行并行决定了任务在线程中是一次只执行一个任务还是并发执行多个任务</p>
-<p>并行队列只有在异步函数下才有效</p>
-<p>多个线程对同一个变量的修改需要加锁,保证一个变量同事只能被一个线程修改,当这个线程修改完毕后,其他线程才能修改,可以使用<code>NSLock</code>,<code>@synchronized</code></p>
-<p>单例模式是一个类在系统中只有一个实例对象,通过一个全局的入口点对这个实例对象进行访问.</p>
-<p>3.<code>NSOperation</code>是对GCD的一个封装,是一个抽象类,只能使用其子类对象,分别是<code>NSInvocationOperation</code>和<code>NSBlockOperation</code></p>
-<p><code>GCD</code>和<code>NSOperation</code>的区别</p>
-<p>1.<code>NSOperation</code>是对<code>GCD</code>的封装,面向对象的类,<code>GCD</code>只是一组方法</p>
-<p>2.<code>NSOperation</code>可以实现<code>GCD</code>实现不了的,或者比较复杂的功能,例如:设置最大并发数,设置线程间的依赖关系</p>
-<p>3.实现某个多线程功能使用<code>GCD</code>,简单易用,实现多个多线程模块使用<code>NSOperation</code>,方便类的管理</p>
-<p><code>NSOperation</code>使用方法</p>
-<p>​    第1步:将一个操作封装到<code>NSOperation</code>对象中</p>
-<p>​    第2步:将<code>NSOperation</code>对象放入<code>NSOperationQueue</code>队列</p>
-<p>​    第3步:<code>NSOperationQueue</code>自动去除队列中的<code>NSOperation</code>对象放到一条线程中执行</p>
-<p>​    常用操作,创建队列,设置最大并发数</p>
-<p>​    <code>let queue = OperationQueue()</code></p>
-<p>​    <code>queue.maxConcurrentOperationCount = 2</code></p>
-<p>​    <code>let operation = BlockOperation.init{ }</code></p>
-<p>​    <code>let operation2 = BlockOperation.init{ }</code></p>
-<p>​    添加到队列中的<code>operation</code>将自动异步执行,如果<code>operation</code>有多个任务会自动分配多个线程并发执行,如果只有一个任务,会自动在主线程执行</p>
-<p>   有两种方式</p>
-<p>​    <code>queue.addOperation(operation)</code></p>
-<p>​    <code>queue.addOperation{ }</code></p>
-<p>​     </p>
-<p>​    <code>NSOperation</code>操作依赖,可以设置一个操作在另外一个操作完成后在执行(有点像同步),<code>operation2</code>等<code>operation</code>执行完才执行</p>
-<p>​    <code>operation2.addDependency(operation)</code></p>
-<p>​     </p>
-<p>​    <code>NSOperation</code>操作监听,一个操作完成后调用另外一个操作,<code>doSomething</code>是一个方法</p>
-<p>​    <code>operation.completionBlock = doSomething</code></p>
-<p>​     </p>
-<p>​    <code>NSOperation</code>线程通信,<code>NSOperationQueue.mainQueue</code></p>
-<p>​    <code>queue.addOperation {() in</code></p>
-<p>​      <code>子线程</code></p>
-<p>​      <code>OperationQueue.main.addOperation ({</code></p>
-<p>​        <code>主线程</code></p>
-<p>​      <code>})</code></p>
-<p>​    <code>}</code></p>
-<p>​     </p>
-<p>​    注意:</p>
-<p>​    1.在使用队列任务时,内存警告的时候可以使用队列的<code>cancelAllOperations</code>函数取消所有操作,一旦取消不可恢复.也可以设置队列的<code>suspended</code>属性暂停和恢复队列.</p>
-<p>​    2.在设置操作依赖的时候不能设置循环依赖</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/01/27/%E5%A4%9A%E7%BA%BF%E7%A8%8B/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
